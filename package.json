@@ -1,0 +1,28 @@
+{
+  "name": "darkins_oop-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willdarkins/Darkins_OOP-Challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willdarkins/Darkins_OOP-Challenge/issues"
+  },
+  "homepage": "https://github.com/willdarkins/Darkins_OOP-Challenge#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  },
+  "devDependencies": {
+    "jest": "^27.2.4"
+  }
+}
