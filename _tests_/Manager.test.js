@@ -8,5 +8,5 @@ test('creates a manager object', () => {
 test('returns name of manager', () => {
     const name = 'Dave';
     const manager = new Manager(name);
-    expect(manager.getName()).toBe(expect.any(String));
+    expect(manager.getName()).toEqual(expect.any(String));
 });
