@@ -22,3 +22,9 @@ test('returns email address of employee', () => {
     const employee = new Employee('Will', 33, email)
     expect(employee.getEmail()).toEqual(expect.any(String));
 })
+
+test('returns Employee as a string', () => {
+    const employeeOutput = 'Employee'
+    const employee = new Employee('Will', 33, 'willdarkins@gmail.com')
+    expect(employee.getRole()).toBe('Employee')
+})
