@@ -22,3 +22,15 @@ test('returns email address of manager', () => {
     const manager = new Manager('Dave', 245, email);
     expect(manager.getEmail()).toEqual(expect.any(String));
 });
+
+test('returns Manager office number', () => {
+    const officeNumber = 7;
+    const manager = new Manager('Dave', 245,'davedidlio@gmail.com', officeNumber);
+    expect(manager.getofficeNumber()).toEqual(expect.any(Number));
+});
+
+test('returns Manager as a string', () => {
+    const employeeOutput = 'Employee';
+    const manager = new Manager('Dave', 245,'davedidlio@gmail.com', 7);
+    expect(manager.getRole()).toBe('Manager');
+});
