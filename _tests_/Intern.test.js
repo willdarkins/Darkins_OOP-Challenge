@@ -28,3 +28,9 @@ test('returns Intern school name', () => {
     const intern = new Intern('Billy', 456,'billybutts@gmail.com', school);
     expect(intern.getSchool()).toEqual(expect.any(String));
 });
+
+test('returns Intern as a string', () => {
+    const employeeOutput = 'Intern';
+    const intern = new Intern('Billy', 456,'billybutts@gmail.com', 'Oregon State');
+    expect(intern.getRole()).toBe('Intern');
+});
