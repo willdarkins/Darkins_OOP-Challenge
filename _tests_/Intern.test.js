@@ -18,7 +18,13 @@ test('returns id number of Intern', () => {
 });
 
 test('returns email address of Intern', () => {
-    const email = 'chetdingus@gmail.com';
+    const email = 'billybutts@gmail.com';
     const intern = new Intern('Billy', 456, email);
     expect(intern.getEmail()).toEqual(expect.any(String));
+});
+
+test('returns Intern school name', () => {
+    const school = 'Oregon State';
+    const intern = new Intern('Billy', 456,'billybutts@gmail.com', school);
+    expect(intern.getSchool()).toEqual(expect.any(String));
 });
