@@ -10,3 +10,9 @@ test('returns name of manager', () => {
     const manager = new Manager(name);
     expect(manager.getName()).toEqual(expect.any(String));
 });
+
+test('returns id number of Manager', () => {
+    const id = 245;
+    const manager = new Manager('Dave', id);
+    expect(manager.getId()).toEqual(expect.any(Number));
+});
