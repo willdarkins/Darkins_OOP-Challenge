@@ -28,3 +28,9 @@ test('returns Engineer Github user name', () => {
     const engineer = new Engineer('Chet', 666,'chetdingus@gmail.com', github);
     expect(engineer.getGithub()).toEqual(expect.any(String));
 });
+
+test('returns Engineer as a string', () => {
+    const employeeOutput = 'Engineer';
+    const engineer = new Engineer('Chet', 666,'chetdingus@gmail.com', 'chetdingus');
+    expect(engineer.getRole()).toBe('Engineer');
+});
