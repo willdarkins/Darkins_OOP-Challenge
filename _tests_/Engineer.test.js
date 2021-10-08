@@ -16,3 +16,9 @@ test('returns id number of Engineer', () => {
     const engineer = new Engineer('Chet', id);
     expect(engineer.getId()).toEqual(expect.any(Number));
 });
+
+test('returns email address of Engineer', () => {
+    const email = 'chetdingus@gmail.com';
+    const engineer = new Engineer('Chet', 666, email);
+    expect(engineer.getEmail()).toEqual(expect.any(String));
+});
