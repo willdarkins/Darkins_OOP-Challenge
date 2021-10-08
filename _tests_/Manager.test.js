@@ -16,3 +16,9 @@ test('returns id number of Manager', () => {
     const manager = new Manager('Dave', id);
     expect(manager.getId()).toEqual(expect.any(Number));
 });
+
+test('returns email address of manager', () => {
+    const email = 'davedidlio@gmail.com';
+    const manager = new Manager('Dave', 245, email);
+    expect(manager.getEmail()).toEqual(expect.any(String));
+});
