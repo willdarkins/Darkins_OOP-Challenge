@@ -1,22 +1,28 @@
-const Manager = require('../lib/Manager');
-const Engineer = require('../lib/Engineer');
-const Intern = require('../lib/Intern');
-
 const fs = require('fs');
-const util = require("util");
+const util = require('util');
 const inquirer = require('inquirer');
-// const generateHTML = require('./src/generateHTML.js')
-// const writeFileAsync = util.promisify(fs.writeFile);
+
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+
+const generateHTML = require('./src/generateHTML.js')
+const writeFileAsync = util.promisify(fs.writeFile);
 
 const teamMembers = [];
 
 
-const managerQuestions = () => {
+const managerprompt = () => {
+    console.log(`
+    ============================
+    Welcome to CLI Team Builder!
+    ============================
+    `);
     inquirer.prompt([
         {
             type: 'input',
             name: 'managername',
-            message: 'Welcome to CLI Team Builder! Let\'s begin! What\'s your Manager\'s name?',
+            message: 'Let\'s begin! What\'s your Manager\'s name?',
             validate: managerAnswer => {
                 if (managerAnswer) {
                     return true;
@@ -66,20 +72,18 @@ const managerQuestions = () => {
             }
         }
     ])
-    .then((data) => {
-        const name = data.managername
-        const id = data.managerid
-        const email = data.manageremail
-        const office = data.office
+    .then((managerInput) => {
+        const {name, id, email, office} = managerInput
         const employee = new Manager(name, id, email, office);
         teamMembers.push(employee);
+        teamPick();
     })
 }
 
 const teamPick = () => {
     inquirer.prompt([
         {
-            type: 'input',
+            type: 'list',
             name: 'teamselect',
             message: 'Select which team memebers to add:',
             choices: ['Engineer', 'Intern', 'I\'m done building my team']
@@ -87,14 +91,35 @@ const teamPick = () => {
     ])
     .then(({teamselect}) => {
         if(teamselect === 'Engineer') {
-            engineerQuestions()
+            engineerPrompt()
         } else if(teamselect === 'Intern') {
-            internQuestions()
+            internPrompt()
         }
     })
 }
 
-const engineerQuestions = () => {
+const continuePrompt = () => {
+    inquirer.prompt([
+        {
+            type: 'list',
+            name: 'continueselect',
+            message: 'Would you like to add more team members?',
+            choices: ['Yes','No']
+        }
+    ])
+    .then(({continueselect}) => {
+        if(continueselect === 'Yes') {
+            teamPick();
+        } 
+    })
+}
+
+const engineerPrompt = () => {
+    console.log(`
+    ====================
+    Engineer Information
+    ====================
+    `);
     inquirer.prompt([
         {
             type: 'input',
@@ -149,17 +174,20 @@ const engineerQuestions = () => {
             }
         },
     ])
-    .then((data) => {
-        const name = data.engineername
-        const id = data.engineerid
-        const email = data.engineeremail
-        const github = data.engineergithub
-        const employee = new Engineer(name, id, email, github);
-        teamMembers.push(employee);
+    .then((engineerInput) => {
+        const {name, id, email, github} = engineerInput
+        const engineer = new Engineer(name, id, email, github);
+        teamMembers.push(engineer);
+        continuePrompt();
     })
 }
 
-const internQuestions = () => {
+const internPrompt = () => {
+    console.log(`
+    ==================
+    Intern Information
+    ==================
+    `);
     inquirer.prompt([
         {
             type: 'input',
@@ -214,12 +242,24 @@ const internQuestions = () => {
             }
         },
     ])
-    .then((data) => {
-        const name = data.internname
-        const id = data.internid
-        const email = data.internemail
-        const school = data.internschool
-        const employee = new Intern(name, id, email, school);
-        teamMembers.push(employee);
+    .then((internInput) => {
+        const {name, id, email, school} = internInput
+        const intern = new Intern(name, id, email, school);
+        teamMembers.push(intern);
+        continuePrompt();
     })
 }
+
+async function init() {
+    try {
+        const data = await managerprompt()
+        const fileSpecs = `./dist/TeamPage.html`
+        const generateContent = generateHTML(teamMembers)
+        await writeFileAsync(fileSpecs, generateContent)
+        console.log('Your team page has been created in the dist sub-directory!')
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+managerprompt()
