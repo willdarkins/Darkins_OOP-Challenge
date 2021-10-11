@@ -262,4 +262,4 @@ async function init() {
     }
 }
 
-managerprompt()
+init();
