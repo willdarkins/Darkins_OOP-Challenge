@@ -176,8 +176,8 @@ const engineerPrompt = () => {
     ])
     .then((engineerInput) => {
         const {name, id, email, github} = engineerInput
-        const engineer = new Engineer(name, id, email, github);
-        teamMembers.push(engineer);
+        const employee = new Engineer(name, id, email, github);
+        teamMembers.push(employee);
         continuePrompt();
     })
 }
@@ -244,8 +244,8 @@ const internPrompt = () => {
     ])
     .then((internInput) => {
         const {name, id, email, school} = internInput
-        const intern = new Intern(name, id, email, school);
-        teamMembers.push(intern);
+        const employee = new Intern(name, id, email, school);
+        teamMembers.push(employee);
         continuePrompt();
     })
 }
@@ -254,7 +254,7 @@ async function init() {
     try {
         const data = await managerprompt()
         const fileSpecs = `./dist/TeamPage.html`
-        const generateContent = generateHTML(teamMembers)
+        const generateContent = generateHTML(data)
         await writeFileAsync(fileSpecs, generateContent)
         console.log('Your team page has been created in the dist sub-directory!')
     } catch (err) {
