@@ -72,12 +72,12 @@ const managerprompt = () => {
             }
         }
     ])
-    .then((managerInput) => {
-        const {name, id, email, office} = managerInput
-        const employee = new Manager(name, id, email, office);
-        teamMembers.push(employee);
-        teamPick();
-    })
+        .then((managerInput) => {
+            const { name, id, email, office } = managerInput
+            const employee = new Manager(name, id, email, office);
+            teamMembers.push(employee);
+            teamPick();
+        })
 }
 
 const teamPick = () => {
@@ -89,13 +89,23 @@ const teamPick = () => {
             choices: ['Engineer', 'Intern', 'I\'m done building my team']
         }
     ])
-    .then(({teamselect}) => {
-        if(teamselect === 'Engineer') {
-            engineerPrompt()
-        } else if(teamselect === 'Intern') {
-            internPrompt()
-        }
-    })
+        .then(({ teamselect }) => {
+            if (teamselect === 'Engineer') {
+                engineerPrompt()
+            } else if (teamselect === 'Intern') {
+                internPrompt()
+            } else {
+                let data = teamMembers.join();
+                fs.writeFile('./dist/index.html', generateHTML(data), err => {
+                    if (err) {
+                        console.log(err);
+                        return;
+                    } else {
+                        console.log('Your team page has been created in the dist sub-directory!')
+                    }
+                })
+            }
+        })
 }
 
 const continuePrompt = () => {
@@ -104,14 +114,23 @@ const continuePrompt = () => {
             type: 'list',
             name: 'continueselect',
             message: 'Would you like to add more team members?',
-            choices: ['Yes','No']
+            choices: ['Yes', 'No']
         }
     ])
-    .then(({continueselect}) => {
-        if(continueselect === 'Yes') {
-            teamPick();
-        } 
-    })
+        .then(({ continueselect }) => {
+            if (continueselect === 'Yes') {
+                teamPick();
+            }
+            let data = teamMembers.join();
+            fs.writeFile('./dist/index.html', generateHTML(data), err => {
+                if (err) {
+                    console.log(err);
+                    return;
+                } else {
+                    console.log('Your team page has been created in the dist sub-directory!')
+                }
+            })
+        })
 }
 
 const engineerPrompt = () => {
@@ -174,12 +193,12 @@ const engineerPrompt = () => {
             }
         },
     ])
-    .then((engineerInput) => {
-        const {name, id, email, github} = engineerInput
-        const employee = new Engineer(name, id, email, github);
-        teamMembers.push(employee);
-        continuePrompt();
-    })
+        .then((engineerInput) => {
+            const { name, id, email, github } = engineerInput
+            const employee = new Engineer(name, id, email, github);
+            teamMembers.push(employee);
+            continuePrompt();
+        })
 }
 
 const internPrompt = () => {
@@ -242,12 +261,12 @@ const internPrompt = () => {
             }
         },
     ])
-    .then((internInput) => {
-        const {name, id, email, school} = internInput
-        const employee = new Intern(name, id, email, school);
-        teamMembers.push(employee);
-        continuePrompt();
-    })
+        .then((internInput) => {
+            const { name, id, email, school } = internInput
+            const employee = new Intern(name, id, email, school);
+            teamMembers.push(employee);
+            continuePrompt();
+        })
 }
 
 async function init() {

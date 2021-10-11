@@ -26,7 +26,6 @@ generateHTML = data => {
   
 }
 
-
 const printManager = manager => {
     return `
     <div class="card" style="width: 18rem;">
