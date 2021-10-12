@@ -5,15 +5,15 @@ generateHTML = data => {
     const employee = data[i];
     const role = employee.getRole();
     switch (role) {
-      case role === 'Manager':
+      case 'Manager':
         const managerCard = printManager(employee);
         cards.push(managerCard);
         break;
-      case role === 'Engineer':
+      case 'Engineer':
         const engineerCard = printEngineer(employee);
         cards.push(engineerCard);
         break;
-      case role === 'Intern':
+      case 'Intern':
         const internCard = printIntern(employee);
         cards.push(internCard);
         break;
@@ -38,7 +38,7 @@ const printManager = manager => {
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${manager.id}</li>
           <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
-          <li class="list-group-item">Office Number: ${manager.office}</li>
+          <li class="list-group-item">Office Number: ${manager.officenumber}</li>
         </ul>
         </div>
       </div>
@@ -87,7 +87,7 @@ const printIntern = intern => {
 }
 
 const printTeamPage = teamCards => {
-    `
+    return`
     <!DOCTYPE html>
     <html lang="en">
     

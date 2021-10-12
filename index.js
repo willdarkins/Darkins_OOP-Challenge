@@ -98,7 +98,7 @@ const teamPick = () => {
             } else if (teamselect === 'Intern') {
                 internPrompt()
             } else {
-                return
+                endQuestionaire();
             }
             //     let data = teamMembers.join();
             //     fs.writeFile('./dist/index.html', generateHTML(data), err => {
