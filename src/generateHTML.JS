@@ -1,5 +1,4 @@
 generateHTML = data => {
-  console.log('Im in the HTML Rn!', data)
   let cards = [];
   for (let i = 0; i < data.length; i++){
     const employee = data[i];
@@ -32,13 +31,13 @@ const printManager = manager => {
       <div class="card shadow" style="width: 18rem;">
         <div class="card-header bg-primary">
           <h2 class="cardTitle">${manager.name}</h2>
-          <h3 class="cardTitle"><i class="fas fa-mug-hot coffee-icon">Manager</h3></i>
+          <h3 class="cardTitle"><i class="fas fa-mug-hot employee-icon">Manager</h3></i>
         </div>
         <div class="card-body bg-light">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${manager.id}</li>
           <li class="list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
-          <li class="list-group-item">Office Number: ${manager.officenumber}</li>
+          <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
         </ul>
         </div>
       </div>
@@ -52,7 +51,7 @@ const printEngineer = engineer => {
   <div class="card shadow" style="width: 18rem;">
     <div class="card-header bg-primary">
       <h2 class="cardTitle">${engineer.name}</h2>
-      <h3 class="cardTitle"><i class="fas fa-glasses">Engineer</h3></i>
+      <h3 class="cardTitle"><i class="fas fa-glasses employee-icon">Engineer</h3></i>
     </div>
     <div class="card-body bg-light">
     <ul class="list-group list-group-flush">
@@ -72,7 +71,7 @@ const printIntern = intern => {
   <div class="card shadow" style="width: 18rem;">
     <div class="card-header bg-primary">
       <h2 class="cardTitle">${intern.name}</h2>
-      <h3 class="cardTitle"><i class="fas fa-user-graduate">Intern</h3></i>
+      <h3 class="cardTitle"><i class="fas fa-user-graduate employee-icon">Intern</h3></i>
     </div>
     <div class="card-body bg-light">
     <ul class="list-group list-group-flush">
@@ -95,7 +94,7 @@ const printTeamPage = teamCards => {
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="src/styles.css">
+      <link rel="stylesheet" href="styles.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
       <script src="https://kit.fontawesome.com/8e4832ddb4.js" crossorigin="anonymous"></script>

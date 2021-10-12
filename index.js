@@ -75,9 +75,7 @@ const managerprompt = () => {
         }
     ])
         .then((managerInput) => {
-            console.log(managerInput);
             const employee = new Manager(managerInput.managername, managerInput.managerid, managerInput.manageremail, managerInput.manageroffice);
-            console.log(employee)
             teamMembers.push(employee);
             teamPick();
         })
@@ -100,16 +98,6 @@ const teamPick = () => {
             } else {
                 endQuestionaire();
             }
-            //     let data = teamMembers.join();
-            //     fs.writeFile('./dist/index.html', generateHTML(data), err => {
-            //         if (err) {
-            //             console.log(err);
-            //             return;
-            //         } else {
-            //             console.log('Your team page has been created in the dist sub-directory!')
-            //         }
-            //     })
-            // }
         })
 }
 
@@ -132,16 +120,21 @@ const continuePrompt = () => {
 }
 
 const endQuestionaire = () => {
-    if(!fs.existsSync(OUTPUT_DIR)) {
+    if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
     }
     fs.writeFileSync(outputPath, generateHTML(teamMembers), err => {
         if (err) {
             console.log(err);
-            return;
-        } else {
-            console.log('Your team page has been created in the dist sub-directory!')
+            return
         }
+        fs.copyFile('./src/styles.css', './output/styles.css', err => {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            console.log('Your team page has been created in the output sub-directory!');
+        });
     })
 }
 
@@ -206,9 +199,7 @@ const engineerPrompt = () => {
         },
     ])
         .then((engineerInput) => {
-            // const { name, id, email, github } = engineerInput
             const employee = new Engineer(engineerInput.engineername, engineerInput.engineerid, engineerInput.engineeremail, engineerInput.engineergithub);
-            console.log(employee);
             teamMembers.push(employee);
             continuePrompt();
         })
@@ -275,7 +266,6 @@ const internPrompt = () => {
         },
     ])
         .then((internInput) => {
-            // const { name, id, email, school } = internInput
             const employee = new Intern(internInput.internname, internInput.internid, internInput.internemail, internInput.internschool);
             teamMembers.push(employee);
             continuePrompt();
@@ -285,15 +275,9 @@ const internPrompt = () => {
 async function init() {
     try {
         await managerprompt()
-        // const fileSpecs = `./dist/TeamPage.html`
-        // console.log(data);
-        // const generateContent = generateHTML(data)
-        // await writeFileAsync(fileSpecs, generateContent)
     } catch (err) {
         console.log(err)
     }
 }
 
 init();
-
-// managerprompt();

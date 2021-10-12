@@ -15,6 +15,11 @@
     color: white;
 }
 
-.coffee-icon {
+.row {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.employee-icon {
     color: white;
 }
