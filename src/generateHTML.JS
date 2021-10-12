@@ -1,20 +1,21 @@
 generateHTML = data => {
-  let Cards = [];
+  console.log('Im in the HTML Rn!', data)
+  let cards = [];
   for (let i = 0; i < data.length; i++){
     const employee = data[i];
     const role = employee.getRole();
     switch (role) {
       case role === 'Manager':
         const managerCard = printManager(employee);
-        Cards.push(managerCard);
+        cards.push(managerCard);
         break;
       case role === 'Engineer':
         const engineerCard = printEngineer(employee);
-        Cards.push(engineerCard);
+        cards.push(engineerCard);
         break;
       case role === 'Intern':
         const internCard = printIntern(employee);
-        Cards.push(internCard);
+        cards.push(internCard);
         break;
       default:
       ''
