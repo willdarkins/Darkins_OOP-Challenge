@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
+.cardTitle {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.jumbotron {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 33%, rgba(9,9,121,1) 67%, rgba(0,212,255,1) 100%);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 50px;
+    color: white;
+}
+
+.row {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.employee-icon {
+    color: white;
+}
