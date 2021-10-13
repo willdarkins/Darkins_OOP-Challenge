@@ -1,3 +1,4 @@
+//Imports Engineer module
 const Engineer = require('../lib/Engineer');
 
 test('creates a Engineer object', () => {

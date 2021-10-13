@@ -1,3 +1,4 @@
+//Imports Manager module
 const Manager = require('../lib/Manager');
 
 test('creates a manager object', () => {

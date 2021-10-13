@@ -1,3 +1,4 @@
+//Imports Intern module
 const Intern = require('../lib/Intern');
 
 test('creates a Intern object', () => {
