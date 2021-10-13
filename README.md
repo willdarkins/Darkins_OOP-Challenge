@@ -9,6 +9,11 @@ Please follow <a href= https://drive.google.com/file/d/1kWJXsBkb-6evUWvA8DwLDwAI
 
 Below are screenshots that provide further reference:
 
+![SCREENSHOT_3](https://user-images.githubusercontent.com/84754257/137074256-e45db991-4f71-43eb-ae35-32b0a9ca1d63.JPG)
+![SCREENSHOT_2](https://user-images.githubusercontent.com/84754257/137074258-7e03b45d-32ce-41d1-972c-cf70f0b77b5e.JPG)
+![SCREENSHOT_1](https://user-images.githubusercontent.com/84754257/137074243-05d81934-18be-424f-87ca-c7cdc9913db1.JPG)
+
+
 ## Table of Contents
 
 * [Installation](#installation)
