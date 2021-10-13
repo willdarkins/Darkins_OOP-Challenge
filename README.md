@@ -5,9 +5,14 @@
 *The what, why, and how:*<br>
 ❓ A command line interface focused application that allows managers to easily display basic information about team members, including email and Github repositories, for quick reference on the job.
 
-Please follow <a href= https://drive.google.com/file/d/1kWJXsBkb-6evUWvA8DwLDwAIR7S1ma_y/view?usp=sharing target="_blank">THIS LINK</a> to view a working video tutorial of the application.
+Please follow <a href= https://drive.google.com/file/d/1kWJXsBkb-6evUWvA8DwLDwAIR7S1ma_y/view?usp target="_blank">THIS LINK</a> to view a working video tutorial of the application.
 
 Below are screenshots that provide further reference:
+
+![SCREENSHOT_3](https://user-images.githubusercontent.com/84754257/137074256-e45db991-4f71-43eb-ae35-32b0a9ca1d63.JPG)
+![SCREENSHOT_2](https://user-images.githubusercontent.com/84754257/137074258-7e03b45d-32ce-41d1-972c-cf70f0b77b5e.JPG)
+![SCREENSHOT_1](https://user-images.githubusercontent.com/84754257/137074243-05d81934-18be-424f-87ca-c7cdc9913db1.JPG)
+
 
 ## Table of Contents
 
@@ -23,7 +28,7 @@ Below are screenshots that provide further reference:
 *Steps required to install project and how to get the development environment running:* 
 <br>
 🔌 Begin by cloning the starter code from the project's Github repository. 
-- Open in the project in your code editor and prompt the terminal.
+- Open the project in your code editor and prompt the terminal.
 - Please install the following modules before running the application:
 * `npm init`
 * `npm i fs`
@@ -64,6 +69,8 @@ Below are screenshots that provide further reference:
 Please consult this documentation before contributing to this project.
 
 ## Questions
+![Profile Pic](https://user-images.githubusercontent.com/84754257/137180177-b8a44767-1670-4057-aacd-87cc4fa13be9.jpg)
+
 If you have any questions regarding the development process of this application, or specific questions about contributing, feel free to reach me by email or on Github.
 * Email 📪 willdarkins@gmail.com
 * Github 🗿 [willdarkins](https://github.com/willdarkins) 
