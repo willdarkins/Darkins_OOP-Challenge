@@ -28,7 +28,7 @@ Below are screenshots that provide further reference:
 *Steps required to install project and how to get the development environment running:* 
 <br>
 🔌 Begin by cloning the starter code from the project's Github repository. 
-- Open in the project in your code editor and prompt the terminal.
+- Open the project in your code editor and prompt the terminal.
 - Please install the following modules before running the application:
 * `npm init`
 * `npm i fs`
