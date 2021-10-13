@@ -5,7 +5,7 @@
 *The what, why, and how:*<br>
 ❓ A command line interface focused application that allows managers to easily display basic information about team members, including email and Github repositories, for quick reference on the job.
 
-Please follow <a href= https://drive.google.com/file/d/1kWJXsBkb-6evUWvA8DwLDwAIR7S1ma_y/view?usp=sharing target="_blank">THIS LINK</a> to view a working video tutorial of the application.
+Please follow <a href= https://drive.google.com/file/d/1kWJXsBkb-6evUWvA8DwLDwAIR7S1ma_y/view?usp target="_blank">THIS LINK</a> to view a working video tutorial of the application.
 
 Below are screenshots that provide further reference:
 
