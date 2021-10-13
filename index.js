@@ -2,9 +2,11 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const path = require('path')
+//Created output path for HTML file
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "TeamPage.html");
 
+//Created output path to copy style sheet and send to output sub-directory
 const SRC_DIR = path.resolve(__dirname, "src");
 const srcPath = path.join(SRC_DIR, "styles.css")
 
@@ -130,7 +132,8 @@ const continuePrompt = () => {
             }
         })
 }
-
+/*Function to end the Inquirer questions, using an output path to write the HTML to the output sub directory.
+There is also an fs.copyFile command to copy the style sheet from src sub-directory, to output*/
 const endQuestionaire = () => {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
